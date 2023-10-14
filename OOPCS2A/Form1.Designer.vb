@@ -31,7 +31,12 @@ Partial Class Form1
         btnInsert = New Button()
         GroupBox1 = New GroupBox()
         Panel1 = New Panel()
+        GroupBox2 = New GroupBox()
+        Label4 = New Label()
+        Button1 = New Button()
+        txtUserID = New TextBox()
         GroupBox1.SuspendLayout()
+        GroupBox2.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
@@ -112,7 +117,7 @@ Partial Class Form1
         GroupBox1.Controls.Add(Label3)
         GroupBox1.Controls.Add(txtFname)
         GroupBox1.Font = New Font("Segoe UI", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        GroupBox1.Location = New Point(250, 143)
+        GroupBox1.Location = New Point(12, 153)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(379, 207)
         GroupBox1.TabIndex = 7
@@ -127,18 +132,66 @@ Partial Class Form1
         Panel1.Size = New Size(781, 116)
         Panel1.TabIndex = 8
         ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Controls.Add(Label4)
+        GroupBox2.Controls.Add(Button1)
+        GroupBox2.Controls.Add(txtUserID)
+        GroupBox2.Font = New Font("Segoe UI", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
+        GroupBox2.Location = New Point(414, 153)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(379, 207)
+        GroupBox2.TabIndex = 9
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "Search Record"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label4.Location = New Point(56, 35)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(63, 21)
+        Label4.TabIndex = 0
+        Label4.Text = "User ID"
+        ' 
+        ' Button1
+        ' 
+        Button1.AutoSize = True
+        Button1.BackColor = Color.LightSteelBlue
+        Button1.FlatStyle = FlatStyle.Popup
+        Button1.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Button1.ForeColor = Color.AliceBlue
+        Button1.Location = New Point(106, 151)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(140, 37)
+        Button1.TabIndex = 6
+        Button1.Text = "Search Record"
+        Button1.UseVisualStyleBackColor = False
+        ' 
+        ' txtUserID
+        ' 
+        txtUserID.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        txtUserID.Location = New Point(193, 32)
+        txtUserID.Name = "txtUserID"
+        txtUserID.Size = New Size(134, 29)
+        txtUserID.TabIndex = 3
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.AliceBlue
         ClientSize = New Size(800, 450)
+        Controls.Add(GroupBox2)
         Controls.Add(Panel1)
         Controls.Add(GroupBox1)
         Name = "Form1"
         Text = "Student Record"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
+        GroupBox2.ResumeLayout(False)
+        GroupBox2.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -151,4 +204,8 @@ Partial Class Form1
     Friend WithEvents btnInsert As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents txtUserID As TextBox
 End Class

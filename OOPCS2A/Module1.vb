@@ -50,4 +50,28 @@ Module Module1
             Form1.txtCourse.Clear()
         End Try
     End Sub
+
+    Public Sub SearchData()
+        sqlquery = "SELECT * FROM students WHERE studID = @uid"
+        mysqlcmd = New MySqlCommand(sqlquery, con)
+
+        Dim uid As String
+        uid = Form1.txtUserID.text
+
+        mysqlcmd.Parameters.AddWithValue("@uid", uid)
+
+        Try
+            reader = mysqlcmd.ExecuteReader()
+            If reader.Read Then
+                Form1.txtFname.Text = reader("StudFName").ToString
+                Form1.txtLname.Text = reader("StudLName").ToString
+                Form1.txtCourse.Text = reader("Course").ToString
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            reader.Close()
+        End Try
+
+    End Sub
 End Module
