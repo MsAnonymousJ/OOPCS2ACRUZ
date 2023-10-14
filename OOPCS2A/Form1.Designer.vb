@@ -31,11 +31,19 @@ Partial Class Form1
         btnInsert = New Button()
         GroupBox1 = New GroupBox()
         Panel1 = New Panel()
+        Label8 = New Label()
         GroupBox2 = New GroupBox()
+        Label5 = New Label()
+        Label6 = New Label()
+        txtCourseSearch = New TextBox()
+        txtLnameSearch = New TextBox()
+        Label7 = New Label()
+        txtFnameSearch = New TextBox()
         Label4 = New Label()
-        Button1 = New Button()
+        btnSearch = New Button()
         txtUserID = New TextBox()
         GroupBox1.SuspendLayout()
+        Panel1.SuspendLayout()
         GroupBox2.SuspendLayout()
         SuspendLayout()
         ' 
@@ -100,7 +108,7 @@ Partial Class Form1
         btnInsert.FlatStyle = FlatStyle.Popup
         btnInsert.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point)
         btnInsert.ForeColor = Color.AliceBlue
-        btnInsert.Location = New Point(106, 151)
+        btnInsert.Location = New Point(113, 193)
         btnInsert.Name = "btnInsert"
         btnInsert.Size = New Size(140, 37)
         btnInsert.TabIndex = 6
@@ -117,9 +125,9 @@ Partial Class Form1
         GroupBox1.Controls.Add(Label3)
         GroupBox1.Controls.Add(txtFname)
         GroupBox1.Font = New Font("Segoe UI", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        GroupBox1.Location = New Point(12, 153)
+        GroupBox1.Location = New Point(29, 153)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(379, 207)
+        GroupBox1.Size = New Size(352, 250)
         GroupBox1.TabIndex = 7
         GroupBox1.TabStop = False
         GroupBox1.Text = "Save Record"
@@ -127,52 +135,127 @@ Partial Class Form1
         ' Panel1
         ' 
         Panel1.BackColor = Color.LightSteelBlue
+        Panel1.Controls.Add(Label8)
         Panel1.Location = New Point(12, 11)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(781, 116)
         Panel1.TabIndex = 8
         ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Font = New Font("Segoe UI Black", 20.25F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
+        Label8.ForeColor = Color.AliceBlue
+        Label8.Location = New Point(279, 37)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(218, 37)
+        Label8.TabIndex = 0
+        Label8.Text = "Student Record"
+        ' 
         ' GroupBox2
         ' 
+        GroupBox2.Controls.Add(Label5)
+        GroupBox2.Controls.Add(Label6)
+        GroupBox2.Controls.Add(txtCourseSearch)
+        GroupBox2.Controls.Add(txtLnameSearch)
+        GroupBox2.Controls.Add(Label7)
+        GroupBox2.Controls.Add(txtFnameSearch)
         GroupBox2.Controls.Add(Label4)
-        GroupBox2.Controls.Add(Button1)
+        GroupBox2.Controls.Add(btnSearch)
         GroupBox2.Controls.Add(txtUserID)
         GroupBox2.Font = New Font("Segoe UI", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        GroupBox2.Location = New Point(414, 153)
+        GroupBox2.Location = New Point(397, 153)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(379, 207)
+        GroupBox2.Size = New Size(379, 250)
         GroupBox2.TabIndex = 9
         GroupBox2.TabStop = False
         GroupBox2.Text = "Search Record"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label5.Location = New Point(51, 72)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(88, 21)
+        Label5.TabIndex = 7
+        Label5.Text = "First Name"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label6.Location = New Point(51, 106)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(86, 21)
+        Label6.TabIndex = 8
+        Label6.Text = "Last Name"
+        ' 
+        ' txtCourseSearch
+        ' 
+        txtCourseSearch.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        txtCourseSearch.Location = New Point(188, 139)
+        txtCourseSearch.Name = "txtCourseSearch"
+        txtCourseSearch.ReadOnly = True
+        txtCourseSearch.Size = New Size(134, 29)
+        txtCourseSearch.TabIndex = 11
+        ' 
+        ' txtLnameSearch
+        ' 
+        txtLnameSearch.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        txtLnameSearch.Location = New Point(188, 103)
+        txtLnameSearch.Name = "txtLnameSearch"
+        txtLnameSearch.ReadOnly = True
+        txtLnameSearch.Size = New Size(134, 29)
+        txtLnameSearch.TabIndex = 12
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label7.Location = New Point(51, 142)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(61, 21)
+        Label7.TabIndex = 9
+        Label7.Text = "Course"
+        ' 
+        ' txtFnameSearch
+        ' 
+        txtFnameSearch.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        txtFnameSearch.Location = New Point(188, 69)
+        txtFnameSearch.Name = "txtFnameSearch"
+        txtFnameSearch.ReadOnly = True
+        txtFnameSearch.Size = New Size(134, 29)
+        txtFnameSearch.TabIndex = 10
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label4.Location = New Point(56, 35)
+        Label4.Location = New Point(51, 35)
         Label4.Name = "Label4"
         Label4.Size = New Size(63, 21)
         Label4.TabIndex = 0
         Label4.Text = "User ID"
         ' 
-        ' Button1
+        ' btnSearch
         ' 
-        Button1.AutoSize = True
-        Button1.BackColor = Color.LightSteelBlue
-        Button1.FlatStyle = FlatStyle.Popup
-        Button1.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.ForeColor = Color.AliceBlue
-        Button1.Location = New Point(106, 151)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(140, 37)
-        Button1.TabIndex = 6
-        Button1.Text = "Search Record"
-        Button1.UseVisualStyleBackColor = False
+        btnSearch.AutoSize = True
+        btnSearch.BackColor = Color.LightSteelBlue
+        btnSearch.FlatStyle = FlatStyle.Popup
+        btnSearch.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        btnSearch.ForeColor = Color.AliceBlue
+        btnSearch.Location = New Point(125, 193)
+        btnSearch.Name = "btnSearch"
+        btnSearch.Size = New Size(140, 37)
+        btnSearch.TabIndex = 6
+        btnSearch.Text = "Search Record"
+        btnSearch.UseVisualStyleBackColor = False
         ' 
         ' txtUserID
         ' 
         txtUserID.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        txtUserID.Location = New Point(193, 32)
+        txtUserID.Location = New Point(188, 32)
         txtUserID.Name = "txtUserID"
         txtUserID.Size = New Size(134, 29)
         txtUserID.TabIndex = 3
@@ -190,6 +273,8 @@ Partial Class Form1
         Text = "Student Record"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
         ResumeLayout(False)
@@ -206,6 +291,13 @@ Partial Class Form1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnSearch As Button
     Friend WithEvents txtUserID As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtCourseSearch As TextBox
+    Friend WithEvents txtLnameSearch As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtFnameSearch As TextBox
+    Friend WithEvents Label8 As Label
 End Class

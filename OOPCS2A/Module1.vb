@@ -63,9 +63,9 @@ Module Module1
         Try
             reader = mysqlcmd.ExecuteReader()
             If reader.Read Then
-                Form1.txtFname.Text = reader("StudFName").ToString
-                Form1.txtLname.Text = reader("StudLName").ToString
-                Form1.txtCourse.Text = reader("Course").ToString
+                Form1.txtFnameSearch.Text = reader("StudFName").ToString
+                Form1.txtLnameSearch.Text = reader("StudLName").ToString
+                Form1.txtCourseSearch.Text = reader("Course").ToString
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

@@ -7,7 +7,8 @@
         SaveRecord()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         SearchData()
     End Sub
+
 End Class
