@@ -42,6 +42,9 @@ Partial Class Form1
         Label4 = New Label()
         btnSearch = New Button()
         txtUserID = New TextBox()
+        displayBtn = New Button()
+        btnDelete = New Button()
+        btnUpdate = New Button()
         GroupBox1.SuspendLayout()
         Panel1.SuspendLayout()
         GroupBox2.SuspendLayout()
@@ -108,7 +111,7 @@ Partial Class Form1
         btnInsert.FlatStyle = FlatStyle.Popup
         btnInsert.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point)
         btnInsert.ForeColor = Color.AliceBlue
-        btnInsert.Location = New Point(113, 193)
+        btnInsert.Location = New Point(125, 193)
         btnInsert.Name = "btnInsert"
         btnInsert.Size = New Size(140, 37)
         btnInsert.TabIndex = 6
@@ -125,7 +128,7 @@ Partial Class Form1
         GroupBox1.Controls.Add(Label3)
         GroupBox1.Controls.Add(txtFname)
         GroupBox1.Font = New Font("Segoe UI", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        GroupBox1.Location = New Point(29, 153)
+        GroupBox1.Location = New Point(28, 133)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(352, 250)
         GroupBox1.TabIndex = 7
@@ -164,7 +167,7 @@ Partial Class Form1
         GroupBox2.Controls.Add(btnSearch)
         GroupBox2.Controls.Add(txtUserID)
         GroupBox2.Font = New Font("Segoe UI", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        GroupBox2.Location = New Point(397, 153)
+        GroupBox2.Location = New Point(396, 133)
         GroupBox2.Name = "GroupBox2"
         GroupBox2.Size = New Size(379, 250)
         GroupBox2.TabIndex = 9
@@ -260,12 +263,57 @@ Partial Class Form1
         txtUserID.Size = New Size(134, 29)
         txtUserID.TabIndex = 3
         ' 
+        ' displayBtn
+        ' 
+        displayBtn.AutoSize = True
+        displayBtn.BackColor = Color.LightSteelBlue
+        displayBtn.FlatStyle = FlatStyle.Popup
+        displayBtn.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        displayBtn.ForeColor = Color.AliceBlue
+        displayBtn.Location = New Point(322, 414)
+        displayBtn.Name = "displayBtn"
+        displayBtn.Size = New Size(172, 54)
+        displayBtn.TabIndex = 7
+        displayBtn.Text = "Display by Course"
+        displayBtn.UseVisualStyleBackColor = False
+        ' 
+        ' btnDelete
+        ' 
+        btnDelete.AutoSize = True
+        btnDelete.BackColor = Color.LightSteelBlue
+        btnDelete.FlatStyle = FlatStyle.Popup
+        btnDelete.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        btnDelete.ForeColor = Color.AliceBlue
+        btnDelete.Location = New Point(84, 414)
+        btnDelete.Name = "btnDelete"
+        btnDelete.Size = New Size(172, 54)
+        btnDelete.TabIndex = 10
+        btnDelete.Text = "Delete"
+        btnDelete.UseVisualStyleBackColor = False
+        ' 
+        ' btnUpdate
+        ' 
+        btnUpdate.AutoSize = True
+        btnUpdate.BackColor = Color.LightSteelBlue
+        btnUpdate.FlatStyle = FlatStyle.Popup
+        btnUpdate.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        btnUpdate.ForeColor = Color.AliceBlue
+        btnUpdate.Location = New Point(556, 414)
+        btnUpdate.Name = "btnUpdate"
+        btnUpdate.Size = New Size(172, 54)
+        btnUpdate.TabIndex = 11
+        btnUpdate.Text = "Update"
+        btnUpdate.UseVisualStyleBackColor = False
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.AliceBlue
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(800, 535)
+        Controls.Add(btnUpdate)
+        Controls.Add(btnDelete)
+        Controls.Add(displayBtn)
         Controls.Add(GroupBox2)
         Controls.Add(Panel1)
         Controls.Add(GroupBox1)
@@ -278,6 +326,7 @@ Partial Class Form1
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents Label1 As Label
@@ -300,4 +349,7 @@ Partial Class Form1
     Friend WithEvents Label7 As Label
     Friend WithEvents txtFnameSearch As TextBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents displayBtn As Button
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents btnUpdate As Button
 End Class

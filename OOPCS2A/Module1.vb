@@ -8,9 +8,12 @@ Module Module1
     Dim host, uname, pwd, dbname As String
     Dim sqlquery As String
 
+    Dim dbTable As New DataTable
+    Dim adapter As New MySqlDataAdapter
+
     Public Sub ConnectDbase()
         host = "127.0.0.1"
-        dbname = "cs2a_oop"
+        dbname = "cs2aoop"
         uname = "root"
         pwd = "password"
 
@@ -71,6 +74,127 @@ Module Module1
             MsgBox(ex.Message)
         Finally
             reader.Close()
+        End Try
+
+    End Sub
+
+    Public Sub LoadAllData()
+        sqlquery = "SELECT * FROM students"
+        adapter = New MySqlDataAdapter(sqlquery, con)
+
+
+        Try
+
+
+            'display the record in your datagridview
+            dbTable = New DataTable
+            adapter.Fill(dbTable)
+
+            With Form2.displayDgv
+                .DataSource = dbTable
+                .AutoResizeColumns()
+
+            End With
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            con.Close()
+
+        End Try
+    End Sub
+
+    Public Sub LoadCourse()
+        sqlquery = "SELECT course FROM students"
+
+        Try
+            mysqlcmd = New MySqlCommand(sqlquery, con)
+            reader = mysqlcmd.ExecuteReader
+
+            While reader.Read
+                Form2.cboCourse.Items.Add(reader("course").ToString)
+            End While
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            con.Close()
+
+        End Try
+    End Sub
+
+    Public Sub DisplayData(kurso As String)
+        sqlquery = "SELECT * FROM students WHERE course = @kurso"
+        adapter = New MySqlDataAdapter(sqlquery, con)
+        adapter.SelectCommand.Parameters.AddWithValue("@kurso", kurso)
+
+        Try
+            'display the record in your datagridview
+            dbTable = New DataTable
+            adapter.Fill(dbTable)
+
+            With Form2.displayDgv
+                .DataSource = dbTable
+                .AutoResizeColumns()
+
+            End With
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            con.Close()
+
+        End Try
+    End Sub
+
+    Public Sub UpdateRecord(studid As String, fname As String, lname As String, course As String)
+
+        sqlquery = "UPDATE students set studFname = @fname, studLname = @lname, course = @course WHERE studid = @studid"
+
+        Try
+            Using cmd As New MySqlCommand(sqlquery, con)
+                cmd.Parameters.AddWithValue("@fname", fname)
+                cmd.Parameters.AddWithValue("@lname", lname)
+                cmd.Parameters.AddWithValue("@course", course)
+                cmd.Parameters.AddWithValue("@studid", studid)
+
+                cmd.ExecuteNonQuery()
+
+            End Using
+
+            MsgBox("Update Successful", vbInformation, "Update Message")
+
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
+        Finally
+            Form1.txtFnameSearch.Clear()
+            Form1.txtLnameSearch.Clear()
+            Form1.txtCourseSearch.Clear()
+            Form1.txtUserID.Clear()
+
+        End Try
+    End Sub
+
+    Public Sub DeleteRecord(studid As String)
+
+        sqlquery = "DELETE FROM students WHERE studid = @studid"
+
+        Try
+            Using cmd As New MySqlCommand(sqlquery, con)
+                cmd.Parameters.AddWithValue("@studid", studid)
+                cmd.ExecuteNonQuery()
+
+            End Using
+
+            MsgBox("Deletion Successful", vbInformation, "Delete Message")
+
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
+        Finally
+            Form1.txtUserID.Clear()
+
         End Try
 
     End Sub
